@@ -12,8 +12,8 @@ The Newsletter Service is a Django project designed to manage newsletter subscri
 ## Technologies Used
 
 - Django: Web framework used for backend development.
-- Celery: Distributed task queue used for asynchronous processing of subscription emails.
-- AWS SQS: Message broker used for communication between Django and Celery.
+- Celery: Distributed task queue used for asynchronous processing of subscription emails as well as for scheduling.
+- AWS SQS: Message broker used for communication between Django and Celery and act as a queue for message processing between beat and worker.
 - MySQL: Relational database used for user and job management.
 - MongoDB: NoSQL database used for logging subscription activities.
 
