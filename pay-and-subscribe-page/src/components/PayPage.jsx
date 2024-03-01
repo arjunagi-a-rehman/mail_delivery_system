@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
-const PayPage = ({ userId, price }) => {
+const PayPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
+  let { userId } = useParams();
   const handlePay = async () => {
     try {
       setLoading(true);
@@ -18,9 +19,9 @@ const PayPage = ({ userId, price }) => {
   };
 
   return (
-    <div>
+    <div className="container-fluid text-center">
       <h1>Pay Page</h1>
-      <p>Price: ${price}</p>
+      <p>Price: 20000 rs</p>
       <button onClick={handlePay} disabled={loading}>
         {loading ? "Paying..." : "Pay Now"}
       </button>
